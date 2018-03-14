@@ -1,0 +1,23 @@
+<div class="img-thumbnail">
+  <img src="assets/images/{{ crib.image }}.jpg" height="200px" width="100%">
+  <div class="caption">
+    <h4>
+      <span class="label label-primary">
+        {{ crib.type}}
+      </span>
+    </h4>
+
+    <h3>
+      <i class="glyphicon glyphicon-tag"></i>
+      {{ crib.price | currency:'USD':true }}
+    </h3>
+
+    <h3>
+      <i class="glyphicon glyphicon-home"></i>
+      {{ crib.address}}
+    </h3>
+  
+    
+  </div>
+  
+</div>
