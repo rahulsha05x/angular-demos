@@ -44,7 +44,7 @@ export class HotelsComponent implements OnInit {
   }
     this.cribsLog = this.cribsLog.filter(function(data){
       console.log("data is "+data.type);
-      return e.toLowerCase() == data.type.toLowerCase();
+        return data.type.toLowerCase().indexOf(e.toLowerCase()) !== -1;
     })
 
       
