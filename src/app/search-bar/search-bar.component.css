@@ -1,0 +1,10 @@
+.search-wrapper {
+    margin-bottom: 1em;
+}
+.search-btn {
+    background-color: yellow;
+    color: lightblue;
+}
+.search-box {
+    width: 100%;
+}

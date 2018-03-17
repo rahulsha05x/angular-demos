@@ -11,28 +11,48 @@ import { Crib } from './../crib';
 export class HotelsComponent implements OnInit {
 
   cribs:any ;
+
+  private cribsBak;
+  public cribsLog;
   
   constructor(
     private http: HttpClient,
     private cribsService:CribsService) { }
 
   ngOnInit() {
-    console.log("Cribs data: "+this.cribs);
     this.cribsService.getAllCrib()
     .subscribe(
       data =>  {
-        this.cribs = data
-      console.log("Crib is : "+ JSON.stringify(this.cribs));
+        
+        this.cribs = data;
+        this.cribsLog = this.cribsBak = this.cribs;
     }
-    )
+    );
 
     this.cribsService.newCribSubject.subscribe(
       data => {
         
         this.cribs.unshift(data);
         console.log("My updated data: "+ JSON.stringify(this.cribs));
-      })
-    
+      });
   }
+  searchObject(e) {
+    console.log(e);
+    this.cribsLog = this.cribsBak;
+    if(e.trim() == '') {
+      return;
+  }
+    this.cribsLog = this.cribsLog.filter(function(data){
+      console.log("data is "+data.type);
+      return e.toLowerCase() == data.type.toLowerCase();
+    })
+
+      
+
+    console.log(this.cribsLog);
+
+   }
+
+
 
 }

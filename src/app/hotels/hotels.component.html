@@ -1,5 +1,10 @@
 <div class="row">
-  <div *ngFor="let crib of cribs" class="col-sm-4">
+  <div class="col-md-12">
+      <app-search-bar  (searchObject)='searchObject($event)'></app-search-bar>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let crib of cribsLog">
     
     <app-hero-card  [crib]="crib" ></app-hero-card>
 

@@ -11,13 +11,16 @@ import { CribsService } from './cribs.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { UserRegisterationComponent } from './user-registeration/user-registeration.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'hotels', component: HotelsComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: UserRegisterationComponent },
   
   {
@@ -26,7 +29,7 @@ const appRoutes: Routes = [
     data: { title: 'Heroes List' }
   },
   { path: '',
-    redirectTo: '/hotels',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
@@ -38,13 +41,16 @@ const appRoutes: Routes = [
     HeroCardComponent,
     AddHotelComponent,
     LoginComponent,
-    UserRegisterationComponent
+    UserRegisterationComponent,
+    SearchBarComponent,
+    DashboardComponent
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

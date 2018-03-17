@@ -1,0 +1,23 @@
+.caption {
+    width: 100%;
+}
+.img-thumbnail {
+    margin: 0px;
+    min-height:200px;
+    width:"500px";
+}
+.wrapper {
+    margin-bottom: 1em;
+}
+.item-image {
+    border: 1px solid black;
+}
+
+img:hover {
+    width:900px;
+    height:400px;
+    z-index: 100;
+    position: absolute;
+    top:0;
+}
+
